@@ -19,6 +19,14 @@ const FormSchema = z.object({
   date: z.string(),
 });
 
+interface State {
+  errors: {
+      customerId: [string],
+      amount: [string],
+      status: [string],
+  }
+}
+
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
 const UpdateInvoice = FormSchema.omit({ id: true, date: true });
 
